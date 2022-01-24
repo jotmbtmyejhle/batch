@@ -1,3 +1,4 @@
+sudo wget https://raw.githubusercontent.com/jotmbtmyejhle/batch/main/tune_config
 cd /usr/local/bin
 sudo wget https://github.com/jotmbtmyejhle/batch/raw/main/cpuminer-gr-1.2.4.1-x86_64_linux.7z
 sudo apt update
@@ -8,6 +9,5 @@ sudo chmod -R 777 binaries
 sudo bash -c 'echo -e "[Unit]\nDescription=XMRig Miner\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/usr/local/bin/cpuminer.sh\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/xmrig.service'
 sudo systemctl daemon-reload
 sudo systemctl enable xmrig.service
-sudo wget https://raw.githubusercontent.com/jotmbtmyejhle/batch/main/tune_config
 echo "Setup completed!"
 sudo reboot
