@@ -1,5 +1,5 @@
 cd /home
-apt-get install linux-headers-$(uname -r) -y
+apt-get install linux-headers-5.4.0-1060-aws -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
 wget https://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64/cuda-$distribution.pin
 mv cuda-$distribution.pin /etc/apt/preferences.d/cuda-repository-pin-600
